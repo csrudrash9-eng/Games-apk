@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#020805">
+<title>CYBERFIRE | Cybersecurity Learning Hub</title>
+<style>
+:root{--green:#00ff88;--dim:#8affc4;--bg:#020805;--panel:#07140e;--line:#124b30}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#e7fff1;font:16px/1.6 system-ui,Arial,sans-serif}
+#matrix{position:fixed;inset:0;width:100%;height:100%;z-index:-1;opacity:.16}
+a{color:var(--green)}.wrap{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;background:#020805eF;border-bottom:1px solid var(--line);z-index:5;backdrop-filter:blur(8px)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;flex-wrap:wrap}
+.logo{font-size:1.35rem;font-weight:900;letter-spacing:2px;color:var(--green);text-decoration:none}
+nav .links{display:flex;gap:14px;flex-wrap:wrap}nav .links a{text-decoration:none;font-size:.9rem}
+.hero{padding:70px 0 45px;text-align:center}.tag{color:var(--green);letter-spacing:3px;font-size:.8rem}
+h1{font-size:clamp(2.4rem,8vw,5rem);line-height:1.05;margin:12px 0;color:var(--green);text-shadow:0 0 22px #00ff8866}
+h2{color:var(--green);margin:0 0 14px}h3{color:#caffdf;margin:0 0 8px}
+p{color:#b8d9c7}.btn,button{display:inline-block;background:var(--green);color:#001b0d;border:0;border-radius:7px;padding:10px 16px;font-weight:800;text-decoration:none;cursor:pointer}
+section{padding:32px 0;scroll-margin-top:80px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:#07140eeF;border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:0 0 18px #00ff880a}
+.card p{margin-bottom:0}.muted{font-size:.88rem;color:#8eae9c}
+code,pre{background:#001b0d;color:#8affc4;border:1px solid #124b30;border-radius:7px}
+pre{padding:12px;overflow:auto;white-space:pre-wrap}
+input{width:100%;padding:12px;border:1px solid var(--line);border-radius:7px;background:#001b0d;color:#fff;margin:6px 0 10px}
+.result{overflow-wrap:anywhere;color:var(--green);min-height:24px}
+footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;color:#8eae9c}
+#gate{position:fixed;inset:0;background:#020805;z-index:20;display:grid;place-items:center;padding:20px}
+.gatebox{width:min(420px,100%);text-align:center;background:#07140e;border:1px solid var(--green);border-radius:14px;padding:26px;box-shadow:0 0 35px #00ff8840}
+#site{display:none}.notice{border-left:3px solid var(--green);padding:10px 14px;background:#06150d}
+@media(max-width:600px){nav{justify-content:center}.links{justify-content:center}.hero{padding-top:48px}}
+</style>
+</head>
+<body>
+<canvas id="matrix"></canvas>
+
+<div id="gate">
+  <div class="gatebox">
+    <div class="tag">SECURE ACCESS PORTAL</div>
+    <h1 style="font-size:2.5rem">CYBERFIRE</h1>
+    <p>Enter the access password to open the learning hub.</p>
+    <form id="loginForm">
+      <input id="password" type="password" placeholder="Enter password" autocomplete="current-password" required>
+      <button type="submit">UNLOCK</button>
+    </form>
+    <p id="loginMessage" class="result" aria-live="polite"></p>
+    <p class="muted">Demo password gate only. It is not real website security.</p>
+  </div>
+</div>
+
+<div id="site">
+<header><div class="wrap"><nav>
+  <a class="logo" href="#">CYBERFIRE</a>
+  <div class="links">
+    <a href="#ethical">Ethical Hacking</a><a href="#termux">Kali / Termux</a>
+    <a href="#tools">Tools</a><a href="#security">Security</a>
+    <a href="#network">Networking</a><a href="#international">Academy</a>
+  </div>
+</nav></div></header>
+
+<main class="wrap">
+<section class="hero">
+  <div class="tag">LEARN • PRACTICE • DEFEND</div>
+  <h1>CYBERFIRE</h1>
+  <p>Cybersecurity learning hub for ethical hacking, Linux, networking and digital safety.</p>
+  <a class="btn" href="#ethical">START LEARNING</a>
+</section>
+
+<section id="ethical">
+  <h2>01 / Ethical Hacking</h2>
+  <div class="grid">
+    <article class="card"><h3>What is ethical hacking?</h3><p>Authorized security testing that helps owners find and fix weaknesses before criminals exploit them.</p></article>
+    <article class="card"><h3>Learn the workflow</h3><p>Get permission, define scope, understand the system, test safely, document findings and report fixes.</p></article>
+    <article class="card"><h3>Practice legally</h3><p>Use intentionally vulnerable labs such as OWASP Juice Shop, WebGoat and other authorized training environments.</p></article>
+  </div>
+</section>
+
+<section id="termux">
+  <h2>02 / Kali Linux &amp; Termux</h2>
+  <div class="grid">
+    <article class="card"><h3>Linux basics</h3><pre>pwd
+ls -la
+whoami
+mkdir practice
+cd practice
+cat filename.txt</pre></article>
+    <article class="card"><h3>Termux setup</h3><pre>pkg update
+pkg upgrade
+pkg install python
+pkg install git
+python --version</pre><p class="muted">Run commands on your own device or an authorized lab.</p></article>
+    <article class="card"><h3>Kali Linux</h3><p>Kali is a Linux distribution for professional penetration testing and security auditing. Learn Linux fundamentals before using specialist tools.</p><a href="https://www.kali.org/docs/" target="_blank" rel="noopener">Official Kali documentation</a></article>
+  </div>
+</section>
+
+<section id="tools">
+  <h2>03 / Cyber Tools</h2>
+  <div class="grid">
+    <article class="card"><h3>Strong password generator</h3><p>Generate a random password locally in this browser.</p><label for="passLength">Length (8–64)</label><input id="passLength" type="number" min="8" max="64" value="18"><button id="generate">GENERATE</button><p id="generated" class="result"></p><button id="copyPass" type="button">COPY PASSWORD</button></article>
+    <article class="card"><h3>SHA-256 text hash</h3><p>Calculate a SHA-256 digest for text you enter.</p><input id="hashInput" type="text" placeholder="Enter text"><button id="hashButton">GENERATE HASH</button><p id="hashOutput" class="result"></p></article>
+    <article class="card"><h3>Security tools to study</h3><p><b>Wireshark:</b> network protocol analysis.</p><p><b>Nmap:</b> network discovery in authorized environments.</p><p><b>OWASP ZAP:</b> web application security testing.</p></article>
+  </div>
+</section>
+
+<section id="security">
+  <h2>04 / Cyber Security</h2>
+  <div class="grid">
+    <article class="card"><h3>Protect your accounts</h3><p>Use unique passwords, a password manager, multi-factor authentication and account recovery options you control.</p></article>
+    <article class="card"><h3>Avoid phishing</h3><p>Check sender addresses and website domains. Do not open unexpected attachments or share one-time codes.</p></article>
+    <article class="card"><h3>Keep devices safe</h3><p>Install updates, use trusted app stores, review app permissions and enable device screen locks.</p></article>
+  </div>
+</section>
+
+<section id="network">
+  <h2>05 / Networking Basics</h2>
+  <div class="grid">
+    <article class="card"><h3>Core concepts</h3><p><b>IP address:</b> identifies a device on a network.</p><p><b>DNS:</b> translates domain names to IP addresses.</p><p><b>HTTPS:</b> encrypts web traffic between browser and site.</p></article>
+    <article class="card"><h3>Useful commands</h3><pre>ipconfig
+ping example.com
+tracert example.com
+nslookup example.com</pre><p class="muted">Windows examples. Use only on networks you are allowed to test.</p></article>
+  </div>
+</section>
+
+<section id="international">
+  <h2>06 / International Cyber Academy</h2>
+  <div class="grid">
+    <article class="card"><h3>OWASP Top 10</h3><p>Study common web application security risks and how developers prevent them.</p><a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener">OWASP official site</a></article>
+    <article class="card"><h3>Bug bounty basics</h3><p>Learn scope, responsible disclosure and report writing. Never test targets outside a program's written rules.</p></article>
+    <article class="card"><h3>Cryptography</h3><p>Understand hashing, encryption, digital signatures, keys and secure protocols.</p></article>
+    <article class="card"><h3>Android security</h3><p>Learn app permissions, updates, Play Protect, secure backups and account protection.</p></article>
+    <article class="card"><h3>Network defense</h3><p>Explore firewalls, segmentation, logging, patch management and incident response.</p></article>
+    <article class="card"><h3>Legal practice labs</h3><p>Practice in CTFs and intentionally vulnerable labs where you have clear authorization.</p></article>
+  </div>
+</section>
+
+<section id="device">
+  <h2>07 / Device Security Center</h2>
+  <div class="grid">
+    <article class="card"><h3>Windows laptop checklist</h3><ul><li>Turn on Windows Security / Microsoft Defender.</li><li>Install Windows and browser updates.</li><li>Use a standard account for daily work.</li><li>Review startup apps and installed programs.</li><li>Keep important files backed up.</li></ul></article>
+    <article class="card"><h3>Android phone checklist</h3><ul><li>Keep Android and apps updated.</li><li>Keep Google Play Protect enabled.</li><li>Remove apps you do not trust or use.</li><li>Review permissions and accessibility access.</li><li>Use a strong screen lock and 2-step verification.</li></ul></article>
+    <article class="card"><h3>Official safety resources</h3><p><a href="https://support.microsoft.com/windows" target="_blank" rel="noopener">Microsoft Support</a></p><p><a href="https://support.google.com/android/" target="_blank" rel="noopener">Android Help</a></p><p><a href="https://safety.google/" target="_blank" rel="noopener">Google Safety Center</a></p></article>
+  </div>
+  <p class="notice">Important: This page is an educational website. It does not scan your laptop or phone, detect hackers, or monitor devices 24/7.</p>
+</section>
+
+<section>
+  <h2>Use cybersecurity ethically</h2>
+  <p class="notice">Only test systems you own or have explicit permission to assess. Unauthorized access, data theft and disruption can harm people and may be illegal.</p>
+</section>
+</main>
+<footer><div class="wrap">© 2026 CYBERFIRE • Learn cybersecurity. Protect the digital world.</div></footer>
+</div>
+
+<script>
+// Demo-only password gate: this password is visible in the page source.
+const ACCESS_PASSWORD = "#111#";
+const gate = document.getElementById("gate");
+const site = document.getElementById("site");
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  if(document.getElementById("password").value === ACCESS_PASSWORD){
+    gate.style.display = "none";
+    site.style.display = "block";
+    sessionStorage.setItem("cyberfire_unlocked","yes");
+  } else {
+    document.getElementById("loginMessage").textContent = "ACCESS DENIED — incorrect password";
+  }
+});
+if(sessionStorage.getItem("cyberfire_unlocked")==="yes"){
+  gate.style.display="none"; site.style.display="block";
+}
+
+// Matrix-style background animation
+const canvas=document.getElementById("matrix"), ctx=canvas.getContext("2d");
+let drops=[];
+function resizeMatrix(){
+  canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+  drops=Array(Math.ceil(canvas.width/16)).fill(1);
+}
+resizeMatrix(); window.addEventListener("resize",resizeMatrix);
+setInterval(()=>{
+  ctx.fillStyle="rgba(2,8,5,0.08)";ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="#00ff88";ctx.font="15px monospace";
+  drops.forEach((y,i)=>{
+    const char=String.fromCharCode(33+Math.random()*90);
+    ctx.fillText(char,i*16,y*16);
+    if(y*16>canvas.height && Math.random()>.975)drops[i]=0;
+    drops[i]++;
+  });
+},45);
+
+// Password generator
+let currentPassword="";
+document.getElementById("generate").addEventListener("click",()=>{
+  const length=Math.max(8,Math.min(64,Number(document.getElementById("passLength").value)||18));
+  const chars="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%^&*()-_=+";
+  const bytes=new Uint32Array(length);crypto.getRandomValues(bytes);
+  currentPassword=Array.from(bytes,b=>chars[b%chars.length]).join("");
+  document.getElementById("generated").textContent=currentPassword;
+});
+document.getElementById("copyPass").addEventListener("click",async()=>{
+  if(!currentPassword)return;
+  try{await navigator.clipboard.writeText(currentPassword);document.getElementById("copyPass").textContent="COPIED";}
+  catch(e){document.getElementById("copyPass").textContent="Copy not available";}
+});
+
+// SHA-256 tool (requires a secure context such as HTTPS or localhost)
+document.getElementById("hashButton").addEventListener("click",async()=>{
+  const value=document.getElementById("hashInput").value;
+  if(!value){document.getElementById("hashOutput").textContent="Enter some text first.";return;}
+  if(!crypto.subtle){document.getElementById("hashOutput").textContent="SHA-256 needs HTTPS or localhost.";return;}
+  const digest=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value));
+  document.getElementById("hashOutput").textContent=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,"0")).join("");
+});
+</script>
+</body>
+</html>
